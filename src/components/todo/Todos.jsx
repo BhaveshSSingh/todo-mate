@@ -1,14 +1,18 @@
 import React from "react";
-import { CheckSquare, ThreeDots } from "react-bootstrap-icons";
+import { RiCheckboxBlankLine } from "react-icons/ri";
+import { BsThreeDots } from "react-icons/bs";
 import "./Todos.css";
 
 function Todos() {
   return (
-    <div className="todos">
-      <CheckSquare />
-      <h4 className="todos__text">Go for a run</h4>
-      <ThreeDots />
-    </div>
+    <>
+      <div className="todos">
+        <RiCheckboxBlankLine className="checkbox__icon" />
+        <h4 className="todos__text">Go for a run</h4>
+        <BsThreeDots />
+      </div>
+      <hr />
+    </>
   );
 }
 

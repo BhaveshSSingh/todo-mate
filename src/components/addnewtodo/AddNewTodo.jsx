@@ -1,13 +1,14 @@
 import React from "react";
-import { Plus } from "react-bootstrap-icons";
+import { SiTodoist } from "react-icons/si";
+import { IoAddSharp } from "react-icons/io5";
 import "./AddNewTodo.css";
 
 function AddNewTodo() {
   return (
     <>
       <button className="addnewtodo">
-        New Todo
-        <Plus className="addnewtodo__plus" />
+        <SiTodoist className="todoist__icon" /> New Todo
+        <IoAddSharp className="plus__icon" />
       </button>
     </>
   );

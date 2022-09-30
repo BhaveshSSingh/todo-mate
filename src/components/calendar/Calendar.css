@@ -1,0 +1,59 @@
+/* icons */
+.profile__icon {
+  font-size: 200%;
+  margin-right: 10px;
+}
+
+.icon {
+  margin-right: 5px;
+}
+.icon:hover {
+  transition: all 300ms ease-in-out;
+}
+/*  */
+.calendar {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  width: 30%;
+  padding: 20px;
+}
+@media only screen and (max-width: 770px) {
+  .calendar {
+    width: 100%;
+  }
+}
+
+.calendar__profile {
+  display: flex;
+  align-items: center;
+  padding: 10px;
+  width: 100%;
+  justify-content: space-between;
+}
+.calendar__profile section {
+  display: flex;
+  align-items: center;
+}
+.calendar__profile a {
+  color: rgb(173, 173, 173);
+}
+.calendar__profile a:hover {
+  color: white;
+}
+/* 2nd section calendar time */
+.calendar__header {
+  display: flex;
+  align-items: center;
+  padding: 10px;
+  width: 100%;
+  justify-content: space-between;
+}
+
+.calendar__days {
+  padding: 10px;
+  margin-left: 20px;
+}
+.calendar__day {
+  padding: 5px;
+}

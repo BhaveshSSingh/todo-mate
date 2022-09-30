@@ -6,17 +6,22 @@
   padding: 10px;
   margin-top: 40px;
   cursor: pointer;
-  border-color: none;
   height: 40px;
-  width: 110px;
+  width: 140px;
 }
-.addnewtodo__plus {
-  padding-left: 5px;
-  padding-bottom: 5px;
-  font-size: 20px;
-  background: rgb(51, 44, 44);
-}
+
 .addnewtodo:hover {
   filter: brightness(1.5);
   transition: all 300ms ease;
+}
+/* icons */
+.todoist__icon {
+  margin-right: 8px;
+}
+.plus__icon {
+  margin-left: 5px;
+  background-color: white;
+  padding-bottom: 5px;
+  font-size: 20px;
+  background: rgb(51, 44, 44);
 }
