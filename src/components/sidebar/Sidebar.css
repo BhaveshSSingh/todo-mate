@@ -1,0 +1,8 @@
+.sidebar {
+  background-color: red;
+}
+.sidebar__profile {
+  background-color: blue;
+  height: auto;
+  width: 100%;
+}

@@ -1,0 +1,17 @@
+.todos {
+  display: flex;
+  padding: 20px 0px;
+}
+.todos:hover {
+  filter: brightness(1.5);
+  transition: all 300ms ease;
+}
+.todos__text {
+  padding-left: 10px;
+  padding-right: 200px;
+  height: 20px;
+}
+.todos__text:hover {
+  color: rgb(73, 72, 72);
+  cursor: pointer;
+}
