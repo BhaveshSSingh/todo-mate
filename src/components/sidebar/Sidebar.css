@@ -4,14 +4,15 @@
   margin-right: 10px;
 }
 
-.icon {
+.icon__title {
   margin-right: 5px;
 }
-.icon:hover {
+.icon__title:hover {
   transition: all 300ms ease-in-out;
 }
+
 /*  */
-.calendar {
+.Sidebar {
   display: flex;
   flex-direction: column;
   align-items: flex-start;
@@ -19,30 +20,30 @@
   padding: 20px;
 }
 @media only screen and (max-width: 770px) {
-  .calendar {
+  .Sidebar {
     width: 100%;
   }
 }
 
-.calendar__profile {
+.Sidebar__profile {
   display: flex;
   align-items: center;
   padding: 10px;
   width: 100%;
   justify-content: space-between;
 }
-.calendar__profile section {
+.Sidebar__profile section {
   display: flex;
   align-items: center;
 }
-.calendar__profile a {
+.Sidebar__profile a {
   color: var(--red);
 }
-.calendar__profile a:hover {
+.Sidebar__profile a:hover {
   color: rgb(255, 62, 62);
 }
-/* 2nd section calendar time */
-.calendar__header {
+/* 2nd section Sidebar time */
+.Sidebar__header {
   display: flex;
   align-items: center;
   padding: 10px;
@@ -50,10 +51,17 @@
   justify-content: space-between;
 }
 
-.calendar__days {
+.Sidebar__days {
   padding: 10px;
   margin-left: 20px;
 }
-.calendar__day {
+.Sidebar__day {
   padding: 5px;
+}
+
+/* AddProject  */
+.addproject__modal {
+  display: flex;
+  flex-direction: column;
+  width: 300px;
 }

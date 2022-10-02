@@ -25,3 +25,19 @@
   font-size: 20px;
   background: rgb(51, 44, 44);
 }
+
+/* Modal */
+.newtodo__modal__header {
+  width: 300px;
+  display: flex;
+  justify-content: space-between;
+  align-self: center;
+}
+.newtodo__modal__text {
+  display: flex;
+  flex-direction: column;
+}
+.newtodo__modal__text2 {
+  padding-top: 15px;
+  display: flex;
+}

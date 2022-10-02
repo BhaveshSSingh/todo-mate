@@ -11,4 +11,41 @@
   top: 30%;
   left: 50%;
   transform: translate(-50%, -25%);
+  padding: 20px;
+  border-radius: 5px;
+}
+
+/* Modal Buttons */
+.cancel__button {
+  margin-top: 5px;
+  padding: 10px;
+  border-radius: 5px;
+  border-color: var(--red);
+  width: 48%;
+  color: var(--red);
+  margin-right: 5px;
+}
+.cancel__button:hover {
+  color: white;
+  background-color: var(--red);
+}
+.add__button {
+  margin-left: 5px;
+  margin-top: 5px;
+  padding: 10px;
+  border-radius: 5px;
+  border-color: var(--green);
+  width: 48%;
+  color: var(--green);
+}
+.add__button:hover {
+  color: white;
+  background-color: var(--green);
+}
+
+.modal__input {
+  margin-top: 10px;
+  height: 30px;
+  border-color: black;
+  border-bottom-color: var(--gray);
 }
