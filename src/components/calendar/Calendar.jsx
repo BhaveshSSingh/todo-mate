@@ -13,7 +13,7 @@ export default function Calendar() {
           <h3>Name</h3>
         </section>
         <section>
-          <a href="">Logout</a>
+          <a href="">Logout! </a>
         </section>
       </section>
 
@@ -52,9 +52,9 @@ export default function Calendar() {
       </section>
       <hr />
       <section className="calendar__days">
-        <div className="calendar__day">today</div>
-        <div className="calendar__day">next 7 days</div>
-        <div className="calendar__day">all days</div>
+        <div className="calendar__day">personal</div>
+        <div className="calendar__day">work</div>
+        <div className="calendar__day">others</div>
       </section>
       <hr />
     </div>

@@ -36,10 +36,10 @@
   align-items: center;
 }
 .calendar__profile a {
-  color: rgb(173, 173, 173);
+  color: var(--red);
 }
 .calendar__profile a:hover {
-  color: white;
+  color: rgb(255, 62, 62);
 }
 /* 2nd section calendar time */
 .calendar__header {
