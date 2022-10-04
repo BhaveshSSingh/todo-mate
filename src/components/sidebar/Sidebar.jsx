@@ -27,7 +27,9 @@ export default function Sidebar() {
           </h3>
         </div>
         <div>
-          <BsCaretUp size="20" />
+          <button>
+            <BsCaretUp size="20" />
+          </button>
         </div>
       </section>
       <hr />

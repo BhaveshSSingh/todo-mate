@@ -1,6 +1,6 @@
 import React from "react";
-import AddNewTodo from "../addnewtodo/AddNewTodo";
-import Todos from "../todo/Todos";
+import AddNewTodo from "../main/addnewtodo/AddNewTodo";
+import Todos from "../main/todo/Todos";
 import "./Main.css";
 
 function Main() {

@@ -21,7 +21,9 @@ export function AddProject({}) {
           <button onClick={() => setShowModal(true)}>
             <IoAddSharp className="icon" size={20} />
           </button>
-          <BsCaretUp size="20" />
+          <button>
+            <BsCaretUp size="20" />
+          </button>
         </div>
       </section>
       <hr />
@@ -35,10 +37,9 @@ export function AddProject({}) {
         <div className="addproject__modal">
           <h3>New Project!</h3>
           <input
+            autoFocus
             className="modal__input"
             type="text"
-            name=""
-            id=""
             placeholder="project name..."
           />
         </div>
