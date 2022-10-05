@@ -5,6 +5,7 @@ import Modal from "../modal/Modal";
 import "./Sidebar.css";
 
 export function AddProject({}) {
+  const projectItems = ["personal", "work", "others"];
   const [showModal, setShowModal] = useState(false);
 
   return (
@@ -28,9 +29,13 @@ export function AddProject({}) {
       </section>
       <hr />
       <section className="Sidebar__days">
-        <div className="Sidebar__day">personal</div>
-        <div className="Sidebar__day">work</div>
-        <div className="Sidebar__day">others</div>
+        {projectItems.length
+          ? projectItems.map((item) => (
+              <div key={item} className="Sidebar__day">
+                {item}
+              </div>
+            ))
+          : "Add projects!"}
       </section>
       <hr />
       <Modal showModal={showModal} setShowModal={setShowModal}>

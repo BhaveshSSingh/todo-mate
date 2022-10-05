@@ -10,7 +10,6 @@ function Main() {
       <AddNewTodo />
       <Todos />
       <Todos />
-      <Todos />
     </div>
   );
 }

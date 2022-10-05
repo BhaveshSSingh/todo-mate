@@ -44,7 +44,7 @@ function AddNewTodo() {
                 <h3>Add a new to do!</h3>
 
                 <button onClick={() => setShowModal(false)}>
-                  <MdOutlineCancel size={20} />
+                  <MdOutlineCancel size={20} color={"rgb(251, 83, 83)"} />
                 </button>
               </div>
               <div className="newtodo__modal__text">

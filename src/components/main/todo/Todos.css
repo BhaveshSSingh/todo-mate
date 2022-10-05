@@ -1,6 +1,7 @@
 .todos {
   display: flex;
   padding: 20px 0px;
+  align-items: center;
 }
 .todos:hover {
   filter: brightness(1.5);

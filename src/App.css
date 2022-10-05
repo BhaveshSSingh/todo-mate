@@ -1,5 +1,8 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400&display=swap");
+
 * {
-  font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS", sans-serif;
+  font-family: "Poppins", sans-serif;
+
   margin: 0%;
   padding: 0%;
   box-sizing: border-box;
@@ -12,20 +15,38 @@
   color: whitesmoke;
   background-color: black;
   display: flex;
-  height: 100vh;
-  width: 100vw;
+  height: 100%;
+  min-height: 100vh;
+  width: 100%;
   padding-top: 100px;
 }
 hr {
   width: 100%;
   border-color: var(--gray);
 }
+
+/* Styling the scroll bar */
+body::-webkit-scrollbar {
+  width: 0.6rem;
+}
+body::-webkit-scrollbar-track {
+  background: black;
+
+  /* background: #1e1e24; */
+}
+body::-webkit-scrollbar-thumb {
+  border-radius: 1rem;
+  background-color: var(--gray);
+}
+
 /* Media query */
-@media only screen and (max-width: 770px) {
+@media only screen and (max-width: 800px) {
   .App {
     display: flex;
     flex-direction: column;
     padding-top: 20px;
+    height: auto;
+    min-height: auto;
   }
 }
 

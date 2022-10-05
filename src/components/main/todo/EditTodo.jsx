@@ -33,7 +33,7 @@ export function EditTodo({ showModal, setShowModal }) {
               <h3>Edit Todo</h3>
 
               <button onClick={() => setShowModal(false)}>
-                <MdOutlineCancel size={20} />
+                <MdOutlineCancel size={20} color={"rgb(251, 83, 83)"} />
               </button>
             </div>
             <div className="newtodo__modal__text">
