@@ -1,7 +1,7 @@
 .todos {
   display: flex;
-  padding: 20px 0px;
-  align-items: center;
+  padding-top: 10px;
+  padding-bottom: 20px;
 }
 .todos:hover {
   filter: brightness(1.5);
@@ -13,6 +13,9 @@
   padding-left: 10px;
   height: 20px;
 }
+.todos__text h6 {
+  color: rgb(165, 165, 165);
+}
 .todos__text:hover {
   color: rgb(73, 72, 72);
   cursor: pointer;
@@ -20,4 +23,11 @@
 /* icons */
 .checkbox__icon {
   background-color: white;
+}
+
+.line {
+}
+.line-through {
+  color: rgb(73, 72, 72);
+  text-decoration: line-through;
 }

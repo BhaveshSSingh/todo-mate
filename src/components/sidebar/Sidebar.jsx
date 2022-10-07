@@ -1,14 +1,20 @@
-import { AddProject } from "./AddProject";
+import { ProjectSection } from "././project/ProjectSection";
 import React from "react";
 import "./Sidebar.css";
 import { FaUserCircle } from "react-icons/fa";
 import { BsCalendar2Event, BsCaretUp } from "react-icons/bs";
+import { useContext } from "react";
+import { TodoContext } from "../context";
 
 export default function Sidebar() {
   const calendarItems = ["today", "next 7 days", "all days"];
+  // CONTEXT
+  const { setSelectedProject } = useContext(TodoContext);
 
   return (
     <div className="Sidebar">
+      {/* Calendar Section */}
+
       <section className="Sidebar__profile">
         <section>
           <FaUserCircle className="profile__icon" />
@@ -38,14 +44,19 @@ export default function Sidebar() {
       <section className="Sidebar__days">
         {calendarItems.length
           ? calendarItems.map((item) => (
-              <div className="Sidebar__day" key={item}>
+              <div
+                className="Sidebar__day"
+                key={item}
+                onClick={() => setSelectedProject(item.name)}
+              >
                 {item}
               </div>
             ))
           : "No items available"}
       </section>
       <hr />
-      <AddProject />
+      {/* ProjectSection */}
+      <ProjectSection />
     </div>
   );
 }

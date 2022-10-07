@@ -16,12 +16,10 @@
   background-color: black;
 }
 
-@media only screen and (max-width: 800px) {
+/* @media only screen and (max-width: 800px) {
   .Modal .container {
-    top: 15%;
-    height: fit-content;
   }
-}
+} */
 
 /* Modal Buttons */
 .cancel__button {

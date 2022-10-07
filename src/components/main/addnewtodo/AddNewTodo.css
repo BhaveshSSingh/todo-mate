@@ -1,16 +1,17 @@
 .addnewtodo {
   background-color: rgb(51, 44, 44);
   display: flex;
-  font-weight: bold;
   border-radius: 0.3rem;
   padding: 10px;
   margin-top: 40px;
+  margin-bottom: 20px;
+
   cursor: pointer;
-  height: 40px;
-  width: 140px;
+  align-items: center;
 }
 
 .addnewtodo:hover {
+  font-size: bold;
   filter: brightness(1.5);
   transition: all 300ms ease;
 }
@@ -20,10 +21,7 @@
 }
 .plus__icon {
   margin-left: 5px;
-  background-color: white;
-  padding-bottom: 5px;
   font-size: 20px;
-  background: rgb(51, 44, 44);
 }
 
 /* Modal */

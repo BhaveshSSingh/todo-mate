@@ -55,17 +55,16 @@ body::-webkit-scrollbar-thumb {
   /* FOr hovering over icons */
   cursor: pointer;
 }
-.icon:hover {
-  background-color: rgb(122, 122, 122);
-}
 
 button {
   color: white;
   background-color: transparent;
   cursor: pointer;
+  border-color: transparent;
 }
 
 input {
   color: white;
   background-color: transparent;
+  border-color: transparent;
 }

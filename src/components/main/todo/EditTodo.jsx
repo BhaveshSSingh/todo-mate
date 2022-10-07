@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import Modal from "../../modal/Modal";
 import { MdOutlineCancel } from "react-icons/md";
-import { IoAddSharp, IoColorPaletteOutline } from "react-icons/io5";
+import { IoColorPaletteOutline } from "react-icons/io5";
 import { ThemeProvider } from "@material-ui/styles";
 import { createTheme } from "@material-ui/core";
 import { grey } from "@material-ui/core/colors";
