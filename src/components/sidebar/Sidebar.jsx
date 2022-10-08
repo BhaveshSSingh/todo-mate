@@ -46,8 +46,8 @@ export default function Sidebar() {
           ? calendarItems.map((item) => (
               <div
                 className="Sidebar__day"
-                key={item}
-                onClick={() => setSelectedProject(item.name)}
+                // key={item}
+                onClick={() => setSelectedProject(item)}
               >
                 {item}
               </div>
@@ -55,7 +55,6 @@ export default function Sidebar() {
           : "No items available"}
       </section>
       <hr />
-      {/* ProjectSection */}
       <ProjectSection />
     </div>
   );

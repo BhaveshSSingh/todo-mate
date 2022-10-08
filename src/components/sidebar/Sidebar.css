@@ -59,6 +59,7 @@
   display: flex;
   justify-content: space-between;
   padding: 5px;
+  cursor: pointer;
 }
 .sidebar__todonums {
   display: flex;

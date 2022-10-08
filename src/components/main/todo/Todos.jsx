@@ -11,7 +11,7 @@ import "./Todos.css";
 function Todos({ todo }) {
   const [showModal, setShowModal] = useState(false);
   const [hover, setHover] = useState(false);
-  console.log(todo);
+  // console.log(todo);
 
   return (
     <>
@@ -55,7 +55,7 @@ function Todos({ todo }) {
         </button>
       </div>
       <hr />
-      <EditTodo showModal={showModal} setShowModal={setShowModal} />
+      <EditTodo showModal={showModal} setShowModal={setShowModal} todo={todo} />
     </>
   );
 }

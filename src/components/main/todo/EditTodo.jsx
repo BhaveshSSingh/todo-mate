@@ -20,10 +20,10 @@ const defaultMaterialTheme = createTheme({
     },
   },
 });
-export function EditTodo({ showModal, setShowModal }) {
-  const [text, setText] = useState("");
-  const [day, setDay] = useState(new Date());
-  const [time, setTime] = useState(new Date());
+export function EditTodo({ showModal, setShowModal, todo }) {
+  const [text, setText] = useState(todo.text);
+  const [day, setDay] = useState(todo.day);
+  const [time, setTime] = useState(todo.time);
   return (
     <Modal showModal={showModal} setShowModal={setShowModal}>
       <ThemeProvider theme={defaultMaterialTheme}>
@@ -53,7 +53,7 @@ export function EditTodo({ showModal, setShowModal }) {
             <div className="modal__time">
               <div className="modal__time2">
                 <div>
-                  <BsFillCalendar2DayFill className="icon" /> Choose a day
+                  <BsFillCalendar2DayFill className="icon" /> Edit date
                 </div>
                 <DatePicker
                   className="MuiInputBase-input"
@@ -65,7 +65,7 @@ export function EditTodo({ showModal, setShowModal }) {
               </div>
 
               <div>
-                <BsClock className="icon" /> Choose time
+                <BsClock className="icon" /> Edit time
               </div>
               <TimePicker
                 className="MuiInputBase-input"
