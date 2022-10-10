@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useContext, useEffect, useState } from "react";
 import Modal from "../../modal/Modal";
 import { MdOutlineCancel } from "react-icons/md";
 import { IoColorPaletteOutline } from "react-icons/io5";
@@ -12,6 +12,8 @@ import {
 } from "@material-ui/pickers";
 import DateFnsUtils from "@date-io/date-fns";
 import { BsBell, BsFillCalendar2DayFill, BsClock } from "react-icons/bs";
+import { TodoContext } from "../../context";
+import { projects } from "../../constant";
 
 const defaultMaterialTheme = createTheme({
   palette: {
@@ -21,11 +23,20 @@ const defaultMaterialTheme = createTheme({
   },
 });
 export function EditTodo({ showModal, setShowModal, todo }) {
+  const { selectedProject } = useContext(TodoContext);
+
   const [text, setText] = useState(todo.text);
   const [day, setDay] = useState(todo.day);
   const [time, setTime] = useState(todo.time);
+  const [todoProject, setTodoProject] = useState(selectedProject);
+  useEffect(() => {
+    setTodoProject(selectedProject);
+  }, [selectedProject]);
+
   return (
     <Modal showModal={showModal} setShowModal={setShowModal}>
+      {/* Todo Form */}
+
       <ThemeProvider theme={defaultMaterialTheme}>
         <MuiPickersUtilsProvider utils={DateFnsUtils}>
           <div>
@@ -81,9 +92,22 @@ export function EditTodo({ showModal, setShowModal, todo }) {
               </div>
 
               <div>
-                <button className="select__project__btn">work </button>
-                <button className="select__project__btn">personal</button>
-                <button className="select__project__btn">other</button>
+                {projects.length > 0 ? (
+                  projects.map((project) => (
+                    <button
+                      className={`select__project__btn ${
+                        todoProject === project.name ? "active" : ""
+                      }`}
+                      onClick={() => setTodoProject(project.name)}
+                    >
+                      {project.name}
+                    </button>
+                  ))
+                ) : (
+                  <p style={{ color: "var(--red)" }}>
+                    Please add a project before proceeding
+                  </p>
+                )}
               </div>
             </div>
             <button className="add__button__full">+ Add Todo</button>

@@ -1,24 +1,27 @@
 import { ProjectSection } from "././project/ProjectSection";
 import React from "react";
 import "./Sidebar.css";
-import { FaUserCircle } from "react-icons/fa";
 import { BsCalendar2Event, BsCaretUp } from "react-icons/bs";
 import { useContext } from "react";
 import { TodoContext } from "../context";
+import { calendarItems } from "../constant";
+import { Avatar } from "@material-ui/core";
 
 export default function Sidebar() {
-  const calendarItems = ["today", "next 7 days", "all days"];
   // CONTEXT
   const { setSelectedProject } = useContext(TodoContext);
-
+  const seed = Math.round(Math.random() * 100);
   return (
     <div className="Sidebar">
       {/* Calendar Section */}
 
       <section className="Sidebar__profile">
         <section>
-          <FaUserCircle className="profile__icon" />
-          <h3>Name</h3>
+          <Avatar
+            className="profile__icon"
+            src={`https://avatars.dicebear.com/api/bottts/${seed}.svg`}
+          />
+          <h3>Nameee</h3>
         </section>
         <section>
           <a href="">Logout! </a>

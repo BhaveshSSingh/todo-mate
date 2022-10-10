@@ -1,9 +1,11 @@
 /* icons */
 .profile__icon {
-  font-size: 200%;
   margin-right: 10px;
+  margin-left: -5px;
+  border: 1px solid rgb(146, 146, 146);
+  width: 50px !important;
+  height: 50px !important;
 }
-
 .icon__title {
   margin-right: 5px;
 }

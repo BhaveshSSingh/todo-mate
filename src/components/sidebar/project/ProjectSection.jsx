@@ -5,16 +5,12 @@ import Modal from "../../modal/Modal";
 import "../Sidebar.css";
 import ProjectForm from "./ProjectForm";
 import Project from "./Project";
+import { projects } from "../../constant";
 
 export function ProjectSection({}) {
   const [showMenu, setShowMenu] = useState(true);
   const [edit, setEdit] = useState(false);
 
-  const projects = [
-    { id: 1, name: "personal", numOfTodos: 10 },
-    { id: 2, name: "work", numOfTodos: 3 },
-    { id: 3, name: "others", numOfTodos: 2 },
-  ];
   const [showModal, setShowModal] = useState(false);
   // Project form
   const [projectName, setProjectName] = useState("");
@@ -50,9 +46,15 @@ export function ProjectSection({}) {
       <hr />
       {/* Project */}
       <section className="Sidebar__days">
-        {projects.map((project) => (
-          <Project project={project} edit={edit} key={project.id} />
-        ))}
+        {projects.length > 0 ? (
+          projects.map((project) => (
+            <Project project={project} edit={edit} key={project.id} />
+          ))
+        ) : (
+          <p style={{ color: "var(--red)" }}>
+            Please add a project before proceeding
+          </p>
+        )}
       </section>
 
       {/* project */}
