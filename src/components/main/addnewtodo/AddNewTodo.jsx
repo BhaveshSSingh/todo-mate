@@ -16,7 +16,7 @@ import { createTheme } from "@material-ui/core";
 import { grey } from "@material-ui/core/colors";
 import { useContext } from "react";
 import { TodoContext } from "../../context";
-import { projects } from "../../constant";
+// import { projects } from "../../constant";
 
 const defaultMaterialTheme = createTheme({
   palette: {
@@ -27,7 +27,7 @@ const defaultMaterialTheme = createTheme({
 });
 function AddNewTodo() {
   // COntext
-  const { selectedProject } = useContext(TodoContext);
+  const { projects, selectedProject } = useContext(TodoContext);
 
   const [showModal, setShowModal] = useState(false);
   const [text, setText] = useState("");

@@ -41,7 +41,7 @@ function Todos({ todo }) {
             {todo.text}
           </h4>
           <h6>
-            {todo.date} - {todo.time} - {todo.project}
+            {todo.date} - {todo.time} - {todo.projectName}
           </h6>
         </div>
         <div className="delete__todo">

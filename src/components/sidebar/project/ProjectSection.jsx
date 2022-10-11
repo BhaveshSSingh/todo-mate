@@ -1,11 +1,12 @@
-import React, { useState } from "react";
+import React, { useContext, useState } from "react";
 import { IoColorPaletteOutline, IoAddSharp } from "react-icons/io5";
 import { BsPencil, BsCaretUp } from "react-icons/bs";
 import Modal from "../../modal/Modal";
 import "../Sidebar.css";
 import ProjectForm from "./ProjectForm";
 import Project from "./Project";
-import { projects } from "../../constant";
+import { TodoContext } from "../../context";
+// import { projects } from "../../constant";
 
 export function ProjectSection({}) {
   const [showMenu, setShowMenu] = useState(true);
@@ -15,6 +16,8 @@ export function ProjectSection({}) {
   // Project form
   const [projectName, setProjectName] = useState("");
   const handleSubmit = (e) => {};
+  // COntext
+  const { projects } = useContext(TodoContext);
 
   return (
     <>
