@@ -10,8 +10,8 @@ function TodoContextProvider({ children }) {
   //
   const todos = useTodos();
   const projects = useProjects(todos);
-  console.log("Projects", projects);
-  console.log("Todos", todos);
+  // console.log("Projects", projects);
+  // console.log("Todos", todos);
   return (
     <TodoContext.Provider
       value={{ selectedProject, setSelectedProject, todos, projects }}

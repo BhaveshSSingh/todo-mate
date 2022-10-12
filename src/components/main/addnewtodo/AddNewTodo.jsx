@@ -16,7 +16,10 @@ import { createTheme } from "@material-ui/core";
 import { grey } from "@material-ui/core/colors";
 import { useContext } from "react";
 import { TodoContext } from "../../context";
-// import { projects } from "../../constant";
+import { calendarItems } from "../../constant";
+import firebase from "../../firebase";
+import moment from "moment/moment";
+import randomColor from "randomcolor";
 
 const defaultMaterialTheme = createTheme({
   palette: {
@@ -39,7 +42,27 @@ function AddNewTodo() {
     setTodoProject(selectedProject);
   }, [selectedProject]);
 
-  // const popperSx: SxProps = {};
+  function handleSubmit(e) {
+    e.preventDefault();
+    if (text && !calendarItems.includes(todoProject)) {
+      firebase
+        .firestore()
+        .collection("todos")
+        .add({
+          checked: false,
+          randomColor: randomColor(),
+          date: moment(day).format("MM/DD/YYYY"),
+          day: moment(day).format("d"),
+          projectName: todoProject,
+          text: text,
+          time: moment(time).format("hh:mm A"),
+        });
+      setShowModal(false);
+      setText("");
+      setDay(new Date());
+      setTime(new Date());
+    }
+  }
   return (
     <>
       <button className="addnewtodo" onClick={() => setShowModal(true)}>
@@ -56,7 +79,7 @@ function AddNewTodo() {
                 <h3>Add a new to do!</h3>
 
                 <button onClick={() => setShowModal(false)}>
-                  <MdOutlineCancel size={20} color={"rgb(251, 83, 83)"} />
+                  <MdOutlineCancel size={20} color={"var(--red)"} />
                 </button>
               </div>
               <div className="newtodo__modal__text">
@@ -123,7 +146,9 @@ function AddNewTodo() {
                   )}
                 </div>
               </div>
-              <button className="add__button__full">+ Add Todo</button>
+              <button className="add__button__full" onClick={handleSubmit}>
+                + Add Todo
+              </button>
             </div>
           </MuiPickersUtilsProvider>
         </ThemeProvider>

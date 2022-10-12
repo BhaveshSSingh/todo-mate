@@ -6,16 +6,39 @@ import "../Sidebar.css";
 import ProjectForm from "./ProjectForm";
 import Project from "./Project";
 import { TodoContext } from "../../context";
-// import { projects } from "../../constant";
+import firebase from "../../firebase";
+import { toast, ToastContainer } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
+import { calendarItems } from "../../constant";
+import randomColor from "randomcolor";
 
-export function ProjectSection({}) {
-  const [showMenu, setShowMenu] = useState(true);
+export function ProjectSection() {
+  const [showMenu] = useState(true);
   const [edit, setEdit] = useState(false);
-
   const [showModal, setShowModal] = useState(false);
+  // Toastify
+  const notify = () => toast("Wow so easy!");
+
   // Project form
   const [projectName, setProjectName] = useState("");
-  const handleSubmit = (e) => {};
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    if (projectName) {
+      const ref = firebase.firestore().collection("projects");
+      ref
+        .where("name", "==", projectName)
+        .get()
+        .then((querySnapshot) => {
+          if (querySnapshot.empty && !calendarItems.includes(projectName)) {
+            ref.add({ name: projectName });
+          } else {
+            alert("Choose a different Name");
+          }
+        });
+      setShowModal(false);
+      setProjectName("");
+    }
+  };
   // COntext
   const { projects } = useContext(TodoContext);
 
