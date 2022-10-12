@@ -20,6 +20,8 @@ import { calendarItems } from "../../constant";
 import firebase from "../../firebase";
 import moment from "moment/moment";
 import randomColor from "randomcolor";
+import { ToastContainer, toast } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
 
 const defaultMaterialTheme = createTheme({
   palette: {
@@ -50,7 +52,7 @@ function AddNewTodo() {
         .collection("todos")
         .add({
           checked: false,
-          randomColor: randomColor(),
+          color: randomColor(),
           date: moment(day).format("MM/DD/YYYY"),
           day: moment(day).format("d"),
           projectName: todoProject,
@@ -61,8 +63,12 @@ function AddNewTodo() {
       setText("");
       setDay(new Date());
       setTime(new Date());
+      toast.success("Todo Added Successfully!");
+    } else {
+      toast.error("Write the todo and select a project!");
     }
   }
+
   return (
     <>
       <button className="addnewtodo" onClick={() => setShowModal(true)}>
@@ -153,6 +159,7 @@ function AddNewTodo() {
           </MuiPickersUtilsProvider>
         </ThemeProvider>
       </Modal>
+      <ToastContainer position="top-right" theme="dark" autoClose={2000} />
     </>
   );
 }

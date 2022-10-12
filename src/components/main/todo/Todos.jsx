@@ -27,7 +27,7 @@ function Todos({ todo }) {
             <RiCheckboxBlankCircleLine
               size={20}
               // className="checkbox__icon"
-              color={todo.randomColor}
+              color={todo.color}
             />
           )}
         </div>
