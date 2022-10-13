@@ -12,24 +12,15 @@ import {
 } from "@material-ui/pickers";
 import DateFnsUtils from "@date-io/date-fns";
 import { ThemeProvider } from "@material-ui/styles";
-import { createTheme } from "@material-ui/core";
-import { grey } from "@material-ui/core/colors";
 import { useContext } from "react";
 import { TodoContext } from "../../context";
-import { calendarItems } from "../../constant";
+import { calendarItems, defaultMaterialTheme } from "../../constant";
 import firebase from "../../firebase";
 import moment from "moment/moment";
 import randomColor from "randomcolor";
 import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 
-const defaultMaterialTheme = createTheme({
-  palette: {
-    primary: {
-      main: grey[900],
-    },
-  },
-});
 function AddNewTodo() {
   // COntext
   const { projects, selectedProject } = useContext(TodoContext);

@@ -13,15 +13,8 @@ import {
 import DateFnsUtils from "@date-io/date-fns";
 import { BsBell, BsFillCalendar2DayFill, BsClock } from "react-icons/bs";
 import { TodoContext } from "../../context";
-// import { projects } from "../../constant";
+import { defaultMaterialTheme } from "../../constant";
 
-const defaultMaterialTheme = createTheme({
-  palette: {
-    primary: {
-      main: grey[900],
-    },
-  },
-});
 export function EditTodo({ showModal, setShowModal, todo }) {
   const { projects, selectedProject } = useContext(TodoContext);
 
