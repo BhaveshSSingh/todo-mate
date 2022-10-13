@@ -15,6 +15,7 @@ function TodoContextProvider({ children }) {
     <TodoContext.Provider
       value={{
         selectedProject,
+        defaultProject,
         setSelectedProject,
         todos: filteredTodos,
         projects,

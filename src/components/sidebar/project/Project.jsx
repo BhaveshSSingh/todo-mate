@@ -5,12 +5,38 @@ import { MdDeleteForever } from "react-icons/md";
 import { TodoContext } from "../../context";
 import Modal from "../../modal/Modal";
 import RenameProject from "./RenameProject";
+import firebase from "../../firebase";
 
 export default function Project({ project, edit }) {
   const [showModal, setShowModal] = useState(false);
-
+  function handleDelete(project) {
+    firebase
+      .firestore()
+      .collection("projects")
+      .doc(project.id)
+      .delete()
+      .then(() => {
+        //Delete all todos under the projectname
+        firebase
+          .firestore()
+          .collection("todos")
+          .where("projectName", "==", project.name)
+          .get()
+          .then((querySnapshot) => {
+            querySnapshot.forEach((doc) => {
+              doc.ref.delete();
+            });
+          });
+      })
+      .then(() => {
+        if (selectedProject === project.name) {
+          setSelectedProject(defaultProject);
+        }
+      });
+  }
   // CONTExT
-  const { setSelectedProject } = useContext(TodoContext);
+  const { selectedProject, defaultProject, setSelectedProject } =
+    useContext(TodoContext);
 
   return (
     <>
@@ -29,7 +55,11 @@ export default function Project({ project, edit }) {
                 className="edit__icon"
                 onClick={() => setShowModal(true)}
               />
-              <MdDeleteForever size={18} className="delete__icon" />
+              <MdDeleteForever
+                size={18}
+                className="delete__icon"
+                onClick={() => handleDelete(project)}
+              />
             </div>
           ) : (
             <div>

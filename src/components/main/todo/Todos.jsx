@@ -7,11 +7,16 @@ import {
 import { MdDeleteForever } from "react-icons/md";
 import { BsThreeDots } from "react-icons/bs";
 import "./Todos.css";
+import firebase from "../../firebase";
 
 function Todos({ todo }) {
   const [showModal, setShowModal] = useState(false);
   const [hover, setHover] = useState(false);
   // console.log(todo);
+
+  function handleDelete(todo) {
+    firebase.firestore().collection("todos").doc(todo.id).delete();
+  }
 
   return (
     <>
@@ -46,7 +51,12 @@ function Todos({ todo }) {
         </div>
         <div className="delete__todo">
           {(hover || todo.checked) && (
-            <MdDeleteForever size={20} className="icon" color="var(--red)" />
+            <MdDeleteForever
+              size={20}
+              className="icon"
+              color="var(--red)"
+              onClick={() => handleDelete(todo)}
+            />
           )}
         </div>
 
