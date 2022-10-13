@@ -12,7 +12,12 @@ import firebase from "../../firebase";
 function Todos({ todo }) {
   const [showModal, setShowModal] = useState(false);
   const [hover, setHover] = useState(false);
-  // console.log(todo);
+
+  function handleCheck(todo) {
+    firebase.firestore().collection("todos").doc(todo.id).update({
+      checked: !todo.checked,
+    });
+  }
 
   function handleDelete(todo) {
     firebase.firestore().collection("todos").doc(todo.id).delete();
@@ -25,23 +30,19 @@ function Todos({ todo }) {
         onMouseEnter={() => setHover(true)}
         onMouseLeave={() => setHover(false)}
       >
-        <div>
+        <div onClick={() => handleCheck(todo)}>
           {todo.checked ? (
             <RiCheckboxCircleFill size={20} color="rgb(165, 165, 165)" />
           ) : (
-            <RiCheckboxBlankCircleLine
-              size={20}
-              // className="checkbox__icon"
-              color={todo.color}
-            />
+            <RiCheckboxBlankCircleLine size={20} color={todo.color} />
           )}
         </div>
 
         <div className="todos__text" key={todo.id}>
           <h4
+            className={`line ${todo.checked ? "line-through" : ""}`}
             onMouseEnter={() => setHover(true)}
             onMouseLeave={() => setHover(false)}
-            className={`line ${todo.checked ? "line-through" : ""}`}
           >
             {todo.text}
           </h4>

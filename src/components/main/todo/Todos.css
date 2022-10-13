@@ -24,6 +24,7 @@
 .line {
 }
 .line-through {
-  color: rgb(73, 72, 72);
+  color: rgb(186, 186, 186);
+  width: 100%;
   text-decoration: line-through;
 }
