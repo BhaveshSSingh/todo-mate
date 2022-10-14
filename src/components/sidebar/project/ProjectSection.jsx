@@ -7,7 +7,7 @@ import ProjectForm from "./ProjectForm";
 import Project from "./Project";
 import { TodoContext } from "../../context";
 import firebase from "../../firebase";
-import { toast, ToastContainer } from "react-toastify";
+import { toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 import { calendarItems } from "../../constant";
 import randomColor from "randomcolor";
@@ -31,8 +31,9 @@ export function ProjectSection() {
         .then((querySnapshot) => {
           if (querySnapshot.empty && !calendarItems.includes(projectName)) {
             ref.add({ name: projectName });
+            toast.success("Project Added Successfully!");
           } else {
-            alert("Choose a different Name");
+            toast.error("Choose a different Name");
           }
         });
       setShowModal(false);
@@ -64,6 +65,7 @@ export function ProjectSection() {
           <button onClick={() => setShowModal(true)}>
             <IoAddSharp className="icon" size={20} />
           </button>
+
           <button>
             <BsCaretUp size="20" />
           </button>

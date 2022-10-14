@@ -6,6 +6,7 @@ import { TodoContext } from "../../context";
 import Modal from "../../modal/Modal";
 import RenameProject from "./RenameProject";
 import firebase from "../../firebase";
+import { toast } from "react-toastify";
 
 export default function Project({ project, edit }) {
   const [showModal, setShowModal] = useState(false);
@@ -27,6 +28,7 @@ export default function Project({ project, edit }) {
               doc.ref.delete();
             });
           });
+        toast.success("Project Deleted");
       })
       .then(() => {
         if (selectedProject === project.name) {

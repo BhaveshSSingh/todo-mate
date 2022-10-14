@@ -8,10 +8,16 @@ import { MdDeleteForever } from "react-icons/md";
 import { BsThreeDots } from "react-icons/bs";
 import "./Todos.css";
 import firebase from "../../firebase";
+import { toast } from "react-toastify";
+import { useContext } from "react";
+import { TodoContext } from "../../context";
 
 function Todos({ todo }) {
   const [showModal, setShowModal] = useState(false);
   const [hover, setHover] = useState(false);
+
+  // context
+  const { setSelectedTodo } = useContext(TodoContext);
 
   function handleCheck(todo) {
     firebase.firestore().collection("todos").doc(todo.id).update({
@@ -21,11 +27,13 @@ function Todos({ todo }) {
 
   function handleDelete(todo) {
     firebase.firestore().collection("todos").doc(todo.id).delete();
+    toast("Todo Deleted");
   }
 
   return (
     <>
       <div
+        onClick={() => setSelectedTodo(todo)}
         className="todos"
         onMouseEnter={() => setHover(true)}
         onMouseLeave={() => setHover(false)}
@@ -66,7 +74,12 @@ function Todos({ todo }) {
         </button>
       </div>
       <hr />
-      <EditTodo showModal={showModal} setShowModal={setShowModal} todo={todo} />
+      <EditTodo
+        showModal={showModal}
+        setShowModal={setShowModal}
+        todo={todo}
+        onClick={() => setSelectedTodo(todo)}
+      />
     </>
   );
 }

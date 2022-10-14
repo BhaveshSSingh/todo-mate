@@ -10,22 +10,6 @@ export default function ProjectForm({
   setShowModal,
   confirmButtonText,
 }) {
-  // toast("🦄 Wow so easy!", {
-  //   position: "top-right",
-  //   autoClose: 5000,
-  //   hideProgressBar: false,
-  //   closeOnClick: true,
-  //   pauseOnHover: true,
-  //   draggable: true,
-  //   progress: undefined,
-  //   theme: "light",
-  // });
-
-  // toast.error("Error Notification !", {
-  //   position: toast.POSITION.TOP_LEFT,
-  // });
-  const notify = () => toast("Wow so easy!");
-
   return (
     <form onSubmit={handleSubmit}>
       <div className="addproject__modal">
@@ -42,10 +26,7 @@ export default function ProjectForm({
       <button className="cancel__button" onClick={() => setShowModal(false)}>
         Cancel
       </button>
-      <button onClick={notify} className="add__button">
-        {confirmButtonText}
-      </button>{" "}
-      {/* <ToastContainer /> */}
+      <button className="add__button">{confirmButtonText}</button>
     </form>
   );
 }

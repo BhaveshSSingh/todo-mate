@@ -1,6 +1,5 @@
 import React, { useRef } from "react";
 import "./Modal.css";
-
 export default function Modal({ children, showModal, setShowModal }) {
   const modalRef = useRef();
   function closeModal(e) {
@@ -8,6 +7,7 @@ export default function Modal({ children, showModal, setShowModal }) {
       setShowModal(false);
     }
   }
+
   return (
     showModal && (
       <div className="Modal" onClick={closeModal} ref={modalRef}>
