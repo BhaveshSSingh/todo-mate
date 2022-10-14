@@ -1,5 +1,5 @@
 import { EditTodo } from "./EditTodo";
-import React, { useState } from "react";
+import React, { useState, useContext } from "react";
 import {
   RiCheckboxBlankCircleLine,
   RiCheckboxCircleFill,
@@ -9,7 +9,6 @@ import { BsThreeDots } from "react-icons/bs";
 import "./Todos.css";
 import firebase from "../../firebase";
 import { toast } from "react-toastify";
-import { useContext } from "react";
 import { TodoContext } from "../../context";
 
 function Todos({ todo }) {
