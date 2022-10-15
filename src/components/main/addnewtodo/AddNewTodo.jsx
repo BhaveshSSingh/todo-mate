@@ -54,7 +54,7 @@ function AddNewTodo() {
       setText("");
       setDay(new Date());
       setTime(new Date());
-      toast.success("Todo Edited Successfully!");
+      toast.success("Todo Added Successfully!");
     } else {
       toast.error("Write the todo and select a project!");
     }
