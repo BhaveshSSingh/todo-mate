@@ -6,8 +6,9 @@ import { useContext } from "react";
 import { TodoContext } from "../context";
 import { calendarItems } from "../constant";
 import { Avatar } from "@material-ui/core";
+import { auth } from "../firebase";
 
-export default function Sidebar() {
+export default function Sidebar({ user }) {
   // CONTEXT
   const { setSelectedProject } = useContext(TodoContext);
   const seed = Math.round(Math.random() * 100);
@@ -21,10 +22,12 @@ export default function Sidebar() {
             className="profile__icon"
             src={`https://avatars.dicebear.com/api/bottts/${seed}.svg`}
           />
-          <h3>Nameee</h3>
+          <h3>{user ? user.displayName : "Nameee"}</h3>
         </section>
         <section>
-          <a href="">Logout! </a>
+          <a href="/login" onClick={() => auth.signOut()}>
+            Logout!{" "}
+          </a>
         </section>
       </section>
 
